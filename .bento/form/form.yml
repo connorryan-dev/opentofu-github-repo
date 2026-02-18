@@ -1,0 +1,23 @@
+name: "Example Bento Form"
+description: "Default form configuration — customize as needed"
+body:
+  - type: text
+    id: project_name
+    attributes:
+      label: "Project name"
+      description: "Name of the project or resource"
+      placeholder: "my-project"
+    validations:
+      required: true
+
+  - type: select
+    id: environment
+    attributes:
+      label: "Environment"
+      options:
+        - label: "Development"
+          value: "dev"
+        - label: "Production"
+          value: "prod"
+    validations:
+      required: true
