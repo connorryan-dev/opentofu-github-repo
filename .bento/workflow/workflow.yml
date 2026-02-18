@@ -1,0 +1,6 @@
+version: 1
+name: "Example Bento workflow"
+steps:
+  - name: "Echo inputs"
+    run: "echo Hello from Bento"
+    shell: "bash"
