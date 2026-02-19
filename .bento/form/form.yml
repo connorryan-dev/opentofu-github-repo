@@ -1,23 +1,42 @@
-name: "Example Bento Form"
-description: "Default form configuration — customize as needed"
+name: "Create GitHub Repository"
+description: "Create a new GitHub repository under the org following org standards"
 body:
   - type: text
-    id: project_name
+    id: repo_name
     attributes:
-      label: "Project name"
-      description: "Name of the project or resource"
-      placeholder: "my-project"
+      label: "Repository Name"
+      description: "Lowercase with hyphens (e.g. my-service)."
+      placeholder: "my-service"
     validations:
       required: true
 
-  - type: select
-    id: environment
+  - type: text
+    id: repo_description
     attributes:
-      label: "Environment"
+      label: "Description"
+      description: "Short description of the repository."
+      placeholder: "Service for handling payments"
+    validations:
+      required: false
+
+  - type: select
+    id: visibility
+    attributes:
+      label: "Visibility"
       options:
-        - label: "Development"
-          value: "dev"
-        - label: "Production"
-          value: "prod"
+        - label: "Private"
+          value: "private"
+        - label: "Public"
+          value: "public"
     validations:
       required: true
+
+  - type: boolean
+    id: has_issues
+    attributes:
+      label: "Enable Issues"
+
+  - type: boolean
+    id: has_wiki
+    attributes:
+      label: "Enable Wiki"
