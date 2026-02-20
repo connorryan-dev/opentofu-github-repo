@@ -1,7 +1,7 @@
 name: "Create GitHub Repository"
 description: "Create a new GitHub repository under the org following org standards"
 body:
-  - type: text
+  - type: input
     id: repo_name
     attributes:
       label: "Repository Name"
@@ -10,7 +10,7 @@ body:
     validations:
       required: true
 
-  - type: text
+  - type: input
     id: repo_description
     attributes:
       label: "Description"
@@ -19,7 +19,7 @@ body:
     validations:
       required: false
 
-  - type: select
+  - type: dropdown
     id: visibility
     attributes:
       label: "Visibility"
@@ -28,15 +28,23 @@ body:
           value: "private"
         - label: "Public"
           value: "public"
+      default: "private"
     validations:
       required: true
 
-  - type: boolean
+  - type: checkboxes
     id: has_issues
     attributes:
       label: "Enable Issues"
+      options:
+        - label: "Enabled"
+          value: "true"
+      default: ["true"]
 
-  - type: boolean
+  - type: checkboxes
     id: has_wiki
     attributes:
       label: "Enable Wiki"
+      options:
+        - label: "Enabled"
+          value: "true"
